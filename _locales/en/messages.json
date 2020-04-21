@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "Fandango Party",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Watch Fandango Now remotely with friends",
+    "description": "Extension description"
+  }
+}
