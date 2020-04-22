@@ -293,7 +293,7 @@
           scrubber[0].dispatchEvent(new MouseEvent('mouseover', eventOptions));
         }).then(delayUntil(function() {
           // wait for the trickplay preview to show up
-          return jQuery('.trickplay-preview').is(':visible');
+          return jQuery('.player-bif-container-hidden').length < 2;
         }, 2500)).then(function() {
           // remember the old position
           oldPlaybackPosition = getPlaybackPosition();
