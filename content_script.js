@@ -152,7 +152,7 @@
     var wakeUp = function() {
       uiEventsHappening += 1;
 
-      var idleDisplay = jQuery(".legacy-controls-styles.legacy.dimmed")
+      var idleDisplay = jQuery(".player-pause-overlay")
       var eventOptions = {
         'bubbles': true,
         'button': 0,
