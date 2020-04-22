@@ -177,7 +177,7 @@
       try {
 	      var sessionIdString = sessionId ? sessionId : 'null';
 	      // console.log('inshow sessionId, uiEventsHappening: ' + sessionIdString + ', ' + uiEventsHappening);
-	      scrubber = jQuery('.text-control');
+	      scrubber = jQuery('#player-scrub-gutter-progress');
 	      // console.log('inshow 2 sessionId, uiEventsHappening: ' + sessionIdString + ', ' + uiEventsHappening);
 	      var eventOptions = {
 	        'bubbles': true,
