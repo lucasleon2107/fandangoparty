@@ -129,10 +129,10 @@
 
     // 'playing', 'paused', 'loading', or 'idle'
     var getState = function() {
-      if (jQuery(".legacy-controls-styles.legacy.dimmed").length > 0) {
+      if (jQuery(".player-pause-overlay-hidden").length > 0) {
         return 'idle';
       }
-      if (jQuery(".AkiraPlayerSpinner--container").length > 0) {
+      if (jQuery(".player-buffering").length > 0) {
         return 'loading';
       }
       if (jQuery('.player-pause-icon').length > 0) {
