@@ -270,7 +270,7 @@
         var eventOptions, scrubber, oldPlaybackPosition, newPlaybackPosition;
         return showControls().then(function() {
           // compute the parameters for the mouse events
-          scrubber = jQuery('#player-scrub-gutter-sub-progress');
+          scrubber = jQuery('#player-scrub-gutter');
           var factor = (milliseconds - seekErrorMean) / getDuration();
           factor = Math.min(Math.max(factor, 0), 1);
           var mouseX = scrubber.offset().left + Math.round(scrubber.width() * factor); // relative to the document
