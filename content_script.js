@@ -92,7 +92,6 @@
     // swallow any errors from an action
     // and log them to the console
     var swallow = function(action) {
-      debugger;
       return function(result) {
         return action(result).catch(function(e) {
           console.error(e);
