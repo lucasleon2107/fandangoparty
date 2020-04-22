@@ -129,7 +129,7 @@
 
     // 'playing', 'paused', 'loading', or 'idle'
     var getState = function() {
-      if (jQuery(".player-pause-overlay-hidden").length > 0) {
+      if (jQuery(".player-pause-overlay-hidden").length < 0) {
         return 'idle';
       }
       if (jQuery(".player-buffering").length > 0) {
