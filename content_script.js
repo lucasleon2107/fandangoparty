@@ -2,8 +2,8 @@
 
 (function() {
   // make sure the content script is only run once on the page
-  if (!window.netflixPartyLoaded) {
-    window.netflixPartyLoaded = true;
+  if (!window.fandangonowPartyLoaded) {
+    window.fandangonowPartyLoaded = true;
 
     //////////////////////////////////////////////////////////////////////////
     // Vendor libraries                                                     //
@@ -109,7 +109,7 @@
     };
 
     //////////////////////////////////////////////////////////////////////////
-    // Netflix API                                                          //
+    // FandangoNOW API                                                          //
     //////////////////////////////////////////////////////////////////////////
 
     // how many simulated UI events are currently going on
@@ -356,7 +356,7 @@
     // this is the markup that needs to be injected onto the page for chat
     var chatHtml = `
       <style>
-        #netflix-player.with-chat {
+        #fandangonow-player.with-chat {
           width: calc(100% - ${chatSidebarWidth}px) !important;
         }
 
@@ -568,20 +568,20 @@
 
     // query whether the chat sidebar is visible
     var getChatVisible = function() {
-      return jQuery('#netflix-player').hasClass('with-chat');
+      return jQuery('#fandangonow-player').hasClass('with-chat');
     };
 
     // show or hide the chat sidebar
     var setChatVisible = function(visible) {
       if (visible) {
-        jQuery('#netflix-player').addClass('with-chat');
+        jQuery('#fandangonow-player').addClass('with-chat');
         jQuery('#chat-container').show();
         if (!document.hasFocus()) {
           clearUnreadCount();
         }
       } else {
         jQuery('#chat-container').hide();
-        jQuery('#netflix-player').removeClass('with-chat');
+        jQuery('#fandangonow-player').removeClass('with-chat');
       }
     };
 
@@ -629,7 +629,7 @@
     // Main logic                                                           //
     //////////////////////////////////////////////////////////////////////////
 
-    // the Netflix player be kept within this many milliseconds of our
+    // the FandangoNOW player be kept within this many milliseconds of our
     // internal representation for the playback time
     var maxTimeError = 2500;
 
@@ -665,7 +665,7 @@
       });
     };
 
-    // this function should be called periodically to ensure the Netflix
+    // this function should be called periodically to ensure the FandangoNOW
     // player matches our internal representation of the playback state
     var sync = function() {
       if (sessionId === null) {
@@ -725,7 +725,7 @@
 
     // this is called when we need to send an update to the server
     // waitForChange is a boolean that indicates whether we should wait for
-    // the Netflix player to update itself before we broadcast
+    // the FandangoNOW player to update itself before we broadcast
     var broadcast = function(waitForChange) {
       return function() {
         var promise;
