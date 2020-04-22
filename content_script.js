@@ -204,7 +204,7 @@
     // hide the playback controls
     var hideControls = function() {
       uiEventsHappening += 1;
-      var player = jQuery('.VideoContainer');
+      var player = jQuery('.player-container');
       var mouseX = 100; // relative to the document
       var mouseY = 100; // relative to the document
       var eventOptions = {
